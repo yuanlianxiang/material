@@ -3,8 +3,9 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vue-tsc --noEmit && vite build",
+    "dev": "vite --config ./build/vite.base.config.js",
+    "build:lib": "vue-tsc --noEmit && vite build --config ./build/vite.lib.config.js",
+    "build:doc": "vue-tsc --noEmit && vite build --config ./build/vite.doc.config.js",
     "preview": "vite preview"
   },
   "dependencies": {
@@ -19,6 +20,7 @@
     "less-loader": "^11.0.0",
     "typescript": "^4.5.4",
     "vite": "^2.9.9",
+    "vite-plugin-dts": "0.9.6",
     "vite-plugin-md": "0.11.4",
     "vue-tsc": "^0.34.7"
   }

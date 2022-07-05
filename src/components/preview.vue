@@ -35,7 +35,7 @@ onMounted(async () => {
       ).default;
     } else {
       sourceCode.value = await fetch(
-        `${isDev ? "" : "/ar"}/packages/${props.compName}/docs/${props.demoName}.vvue`
+        `${isDev ? "" : "/ar"}/packages/${props.compName}/docs/${props.demoName}.vue`
       ).then((res) => res.text());
     }
   }

@@ -4,9 +4,15 @@
 import ComponentList from "../packages/list.json";
 import { reactive } from "vue";
 
+interface IComponentParams {
+  compName: string;
+  compZhName: string;
+  compDesc: string;
+  compClassName: string;
+}
 
 const data = reactive({
-  links: ComponentList.map((item: Object) => ({
+  links: ComponentList.map((item: IComponentParams) => ({
     path: `/components/${item.compName}`,
     name: item.compZhName,
   })),
