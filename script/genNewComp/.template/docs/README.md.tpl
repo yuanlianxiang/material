@@ -6,19 +6,19 @@ import demo from './demo.vue'
 
 <!-- 正文开始 -->
 
-# Button组件
+# {{ compZhName }}
 
-默认：这是一个Button组件
+{{ compDesc }}
 
 ## 基础用法
-<Preview comp-name="Button" demo-name="demo">
+<Preview comp-name="{{compName}}" demo-name="demo">
   <demo />
 </Preview>
 
 ## 属性
 参数 | 说明 | 类型 | 可选值 | 默认值 | 是否必填
 :-: | :-: | :-: | :-: | :-: | :-:
-`arg1` | 第一个参数 | string | - | `default` | 否
+`arg1` | 第一个参数 | string | - | `default` | 否 
 `arg2` | 第二个参数 | string | - | `default` | 否
 
 ## 事件
