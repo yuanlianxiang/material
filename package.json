@@ -1,0 +1,33 @@
+{
+  "name": "ar-vue-app",
+  "private": true,
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite --config ./build/vite.base.config.js",
+    "build:lib": "vue-tsc --noEmit && vite build --config ./build/vite.lib.config.js",
+    "build:doc": "vue-tsc --noEmit && vite build --config ./build/vite.doc.config.js",
+    "gen": "node ./script/genNewComp/index.js",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "prismjs": "1.25.0",
+    "vue": "^3.2.25",
+    "vue-router": "^4.0.16"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.1",
+    "@vitejs/plugin-vue": "^2.3.3",
+    "fs-extra": "10.0.0",
+    "handlebars": "4.7.7",
+    "inquirer": "8.2.0",
+    "less": "^4.1.3",
+    "less-loader": "^11.0.0",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.9",
+    "vite-plugin-copy": "0.1.6",
+    "vite-plugin-dts": "0.9.6",
+    "vite-plugin-md": "0.11.4",
+    "vue-tsc": "^0.34.7"
+  }
+}
