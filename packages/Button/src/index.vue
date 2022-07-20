@@ -1,26 +1,43 @@
+<!-- @format -->
+
 <script lang="ts" setup>
-const emits = defineEmits(["click"])
+import { defineEmits } from "vue";
+
+const props = withDefaults(
+  defineProps<{
+    type?: string;
+    disabled?: boolean;
+    size?: string;
+    round?: boolean;
+    loading?: boolean;
+    icon?: string,
+    circle?: boolean
+  }>(),
+  { type: "primary", disabled: false, size: "small", round: false, loading: false, icon: "", circle: false }
+);
+const emit = defineEmits(["click"]);
+
+const handleClick = (evt: MouseEvent) => {
+  emit("click", evt);
+};
 </script>
 
 <template>
-  <button class="ui-button" @click="$emit('click', $event)">
-    <slot></slot>
+  <button
+    :class="[
+      'ui-button',
+      type ? 'ui-button--' + type : '',
+      size ? 'ui-button-' + size + '--size' : '',
+      {
+        'is-round': round,
+        'is-disabled': disabled,
+        'is-circle': circle
+      },
+    ]"
+    @click="handleClick"
+  >
+    <i class="ui-icon-loading" v-if="loading"></i>
+    <i :class="icon" v-if="icon && !loading"></i>
+    <span v-if="$slots.default"><slot></slot></span>
   </button>
 </template>
-
-<style lang="less" scoped>
-.ui-button {
-  appearance: none;
-  padding: 5px 10px;
-  background-color: antiquewhite;
-  border: none;
-  border-radius: 5px;
-  color: #ffffff;
-  &:active {
-    background-color: aquamarine;
-  }
-  &:not(:last-child) {
-    margin-right: 15px;
-  }
-}
-</style>

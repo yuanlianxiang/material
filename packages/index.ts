@@ -9,11 +9,13 @@ import { App, Plugin } from 'vue';
 
 import { ButtonPlugin } from './Button';
 import { InputPlugin } from './Input';
+import { CheckboxPlugin } from './Checkbox';
 
 const MYKitPlugin: Plugin = {
   install(app: App) {
     ButtonPlugin.install?.(app);
     InputPlugin.install?.(app);
+    CheckboxPlugin.install?.(app);
   },
 };
 
@@ -21,3 +23,4 @@ export default MYKitPlugin;
 
 export * from './Button'
 export * from './Input'
+export * from './Checkbox'

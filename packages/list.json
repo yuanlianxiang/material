@@ -10,5 +10,11 @@
     "compZhName": "输入框",
     "compDesc": "默认：这是一个新组件",
     "compClassName": "input"
+  },
+  {
+    "compName": "Checkbox",
+    "compZhName": "多选框",
+    "compDesc": "默认：这是一个新组件",
+    "compClassName": "checkbox"
   }
 ]
