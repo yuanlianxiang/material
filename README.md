@@ -14,3 +14,46 @@ Since TypeScript cannot handle type information for `.vue` imports, they are shi
 2. Reload the VS Code window by running `Developer: Reload Window` from the command palette.
 
 You can learn more about Take Over mode [here](https://github.com/johnsoncodehk/volar/discussions/471).
+
+# 生成组件模板指令
+yarn gen or npm run gen
+```
+material
+├─ build
+│  ├─ vite.base.config.js
+│  ├─ vite.doc.config.js
+│  └─ vite.lib.config.js
+├─ docs                           文档网页
+│  ├─ assets
+│  │  ├─ index.78a56fba.css
+│  │  ├─ index.a388a8c6.js
+│  │  └─ README.c359b0ae.js
+│  ├─ favicon.ico
+│  └─ index.html
+├─ index.html
+├─ package.json
+├─ packages                       组件文件
+├─ public
+│  └─ favicon.ico
+├─ README.md
+├─ script                         生成组件模板
+├─ src
+│  ├─ api
+│  │  └─ request.ts
+│  ├─ App.vue
+│  ├─ assets
+│  │  ├─ logo.png
+│  │  ├─ markdown.css
+│  │  └─ prism.css
+│  ├─ components
+│  │  └─ preview.vue
+│  ├─ env.d.ts
+│  ├─ main.ts
+│  └─ router
+│     └─ index.ts
+├─ tsconfig.json
+├─ tsconfig.node.json
+├─ vite.config.ts
+└─ yarn.lock
+
+```

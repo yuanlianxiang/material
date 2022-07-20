@@ -1,0 +1,115 @@
+@font-face {
+  font-family: "iconfont"; /* Project id 1826954 */
+  src: url('iconfont.woff2?t=1653621088371') format('woff2'),
+       url('iconfont.woff?t=1653621088371') format('woff'),
+       url('iconfont.ttf?t=1653621088371') format('truetype');
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.form-null:before {
+  content: "\e62d";
+}
+
+.form-m-close:before {
+  content: "\e6ab";
+}
+
+.form-m-close-hover:before {
+  content: "\e6ac";
+}
+
+.form-delete:before {
+  content: "\e61f";
+}
+
+.form-upload:before {
+  content: "\e620";
+}
+
+.form-download:before {
+  content: "\e621";
+}
+
+.form-see:before {
+  content: "\e622";
+}
+
+.form-single-left:before {
+  content: "\e635";
+}
+
+.form-single-right:before {
+  content: "\e636";
+}
+
+.form-single-up:before {
+  content: "\e638";
+}
+
+.form-single-down:before {
+  content: "\e639";
+}
+
+.form-arrow-bottom:before {
+  content: "\e637";
+}
+
+.form-arrow-top:before {
+  content: "\e67f";
+}
+
+.form-msg-close:before {
+  content: "\e70c";
+}
+
+.form-modal-close:before {
+  content: "\e70b";
+}
+
+.form-msg-success:before {
+  content: "\e66b";
+}
+
+.form-msg-error:before {
+  content: "\e651";
+}
+
+.form-msg-info:before {
+  content: "\e65a";
+}
+
+.form-msg-warning:before {
+  content: "\e671";
+}
+
+.form-arrow-r:before {
+  content: "\e6c4";
+}
+
+.form-arrow-l:before {
+  content: "\e6c5";
+}
+
+.form-ellipsis:before {
+  content: "\e701";
+}
+
+.form-loading:before {
+  content: "\e640";
+}
+
+.form-close:before {
+  content: "\e641";
+}
+
+.form-arrow:before {
+  content: "\e69b";
+}
+

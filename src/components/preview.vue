@@ -5,6 +5,7 @@ import Prism from "prismjs";
 import "../assets/prism.css";
 import { computed, nextTick, onMounted, ref } from "vue";
 
+const sectionCode = ref<null>();
 const props = defineProps({
   compName: {
     type: String,
@@ -31,7 +32,9 @@ onMounted(async () => {
   if (props.compName && props.demoName) {
     if (isDev) {
       sourceCode.value = (
-        await import(/* @vite-ignore */`../../packages/${props.compName}/docs/${props.demoName}.vue?raw`)
+        await import(
+          /* @vite-ignore */ `../../packages/${props.compName}/docs/${props.demoName}.vue?raw`
+        )
       ).default;
     } else {
       sourceCode.value = await fetch(
@@ -44,13 +47,13 @@ onMounted(async () => {
 });
 
 const showSourceCode = () => {
-  codeVisible.value = !codeVisible.value
+  codeVisible.value = !codeVisible.value;
 };
 </script>
 
 <template>
   <div class="ar-preview">
-    <section>
+    <section ref="sectionCode">
       <slot></slot>
     </section>
     <div v-show="codeVisible" class="source-code">

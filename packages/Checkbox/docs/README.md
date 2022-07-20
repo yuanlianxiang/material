@@ -14,12 +14,12 @@ onMounted(async () => {
 
 <!-- 正文开始 -->
 
-# {{ compZhName }}
+# 多选框
 
-{{ compDesc }}
+默认：这是一个新组件
 
 ## 基础用法
-<Preview comp-name="{{compName}}" demo-name="demo">
+<Preview comp-name="Checkbox" demo-name="demo">
   <demo />
 </Preview>
 

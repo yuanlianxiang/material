@@ -18,6 +18,11 @@
     name: 'Input',
     path: '/components/Input',
     component: () => import('../../packages/Input/docs/README.md'),
+  },{
+    title: '多选框',
+    name: 'Checkbox',
+    path: '/components/Checkbox',
+    component: () => import('../../packages/Checkbox/docs/README.md'),
   }];
  
  const routerConfig = {

@@ -1,0 +1,166 @@
+.button-variant(@color, @background-color, @border-color) {
+  color: @color;
+  background-color: @background-color;
+  border-color: @border-color;
+
+  &:hover,
+  &:focus {
+    background: mix(@--color-white, @background-color, @--button-hover-tint-percent);
+    border-color: mix(@--color-white, @border-color, @--button-hover-tint-percent);
+    color: @color;
+  }
+
+  &:active {
+    background: mix(@--color-black, @background-color, @--button-active-shade-percent);
+    border-color: mix(@--color-black, @border-color, @--button-active-shade-percent);
+    color: @color;
+    outline: none;
+  }
+
+  &.is-active {
+    background: mix(@--color-black, @background-color, @--button-active-shade-percent);
+    border-color: mix(@--color-black, @border-color, @--button-active-shade-percent);
+    color: @color;
+  }
+
+  &.is-disabled {
+
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      color: @--color-white;
+      background-color: mix(@background-color, @--color-white);
+      border-color: mix(@border-color, @--color-white);
+      cursor: not-allowed;
+    }
+  }
+}
+
+.button-size(@padding-vertical, @padding-horizontal, @font-size, @border-radius) {
+  padding: @padding-vertical @padding-horizontal;
+  font-size: @font-size;
+  border-radius: @border-radius;
+
+  &.is-round {
+    padding: @padding-vertical @padding-horizontal;
+  }
+}
+
+.ui-button {
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+  cursor: pointer;
+  border: @--border-base;
+  border-color: @--button-default-border-color;
+  color: @--button-default-font-color;
+  -webkit-appearance: none;
+  text-align: center;
+  box-sizing: border-box;
+  outline: none;
+  margin: 0;
+  transition: 0.1s;
+  font-weight: @--button-font-weight;
+  .utils-user-select(none);
+
+  &+& {
+    margin-left: 10px;
+  }
+
+  &:hover,
+  &:focus {
+    color: @--color-primary;
+    border-color: @--color-primary-light-7;
+    background-color: @--color-primary-light-9;
+  }
+
+  &:active {
+    color: mix(@--color-black, @--color-primary, @--button-active-shade-percent);
+    border-color: mix(@--color-black, @--color-primary, @--button-active-shade-percent);
+    outline: none;
+  }
+
+  &:not(:last-child) {
+    margin-right: 15px;
+  }
+
+  &--primary {
+    .button-variant(@--button-primary-font-color, @--button-primary-background-color, @--button-primary-border-color)
+  }
+
+  &--success {
+    .button-variant(@--button-success-font-color, @--button-success-background-color, @--button-success-border-color)
+  }
+
+  &--warning {
+    .button-variant(@--button-warning-font-color, @--button-warning-background-color, @--button-warning-border-color)
+  }
+
+  &--danger {
+    .button-variant(@--button-danger-font-color, @--button-danger-background-color, @--button-danger-border-color)
+  }
+
+  &--info {
+    .button-variant(@--button-info-font-color, @--button-info-background-color, @--button-info-border-color)
+  }
+
+  &-mini--size {
+    .button-size(@--button-mini-padding-vertical, @--button-mini-padding-horizontal, @--button-mini-font-size, @--button-mini-border-radius);
+  }
+
+  &-small--size {
+    .button-size(@--button-small-padding-vertical, @--button-small-padding-horizontal, @--button-small-font-size, @--button-small-border-radius)
+  }
+
+  &-medium--size {
+    .button-size(@--button-medium-padding-vertical, @--button-medium-padding-horizontal, @--button-medium-font-size, @--button-medium-border-radius);
+  }
+
+  & [class*="ui-icon-"] {
+    &+span {
+      margin-left: 5px;
+    }
+  }
+
+  &.is-round {
+    border-radius: 20px;
+    padding: 12px 23px;
+  }
+
+  &.is-circle {
+    border-radius: 50%;
+    padding: @--button-padding-vertical;
+  }
+
+  &.is-loading {
+    position: relative;
+    pointer-events: none;
+
+    &:before {
+      pointer-events: none;
+      content: '';
+      position: absolute;
+      left: -1px;
+      top: -1px;
+      right: -1px;
+      bottom: -1px;
+      border-radius: inherit;
+      background-color: rgba(255, 255, 255, .35);
+    }
+  }
+
+  &-icon {
+    display: inline-block;
+    animation: roll 2s linear infinite;
+  }
+
+  @keyframes roll{
+    0% {
+      transform: rotate(0);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}
